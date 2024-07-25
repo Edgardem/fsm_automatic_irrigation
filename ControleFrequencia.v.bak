@@ -1,0 +1,17 @@
+module ControleFrequencia (
+    input fast_clk,
+    input slow_clk,
+    input start_fill,
+    input Aspersao,
+    input Gotejamento,
+    input Limpeza,
+    output reg Fast_on,
+    output reg Slow_on
+);
+
+    always @(*) begin
+        Fast_on = (fast_clk && start_fill) || (fast_clk && Aspersao);
+        Slow_on = (slow_clk && Gotejamento) || (slow_clk && Limpeza);
+    end
+
+endmodule

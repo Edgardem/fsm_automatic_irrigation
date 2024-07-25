@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at NivelAguaControl.v(18): always construct contains both blocking and non-blocking assignments File: /media/aluno/E011-A01C/Problema 3/Rega Automatica/NivelAguaControl.v Line: 18

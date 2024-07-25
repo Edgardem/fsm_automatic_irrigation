@@ -1,0 +1,329 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -14.612
+TNS   : -28.776
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_24|Q'
+Slack : -5.725
+TNS   : -17.084
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_25|Q'
+Slack : -4.518
+TNS   : -14.677
+
+Type  : Setup 'REGA_Mode[0]'
+Slack : -2.883
+TNS   : -8.558
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_262144|Q'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_4096|Q'
+Slack : 0.209
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_1048576|Q'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_2|Q'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_64|Q'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_1024|Q'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_256|Q'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_65536|Q'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_8|Q'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_16384|Q'
+Slack : 0.469
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_8388608|Q'
+Slack : 0.470
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_4194304|Q'
+Slack : 0.567
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_131072|Q'
+Slack : 0.809
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_128|Q'
+Slack : 0.825
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_2048|Q'
+Slack : 0.825
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_4|Q'
+Slack : 0.825
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_32768|Q'
+Slack : 0.828
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_2097152|Q'
+Slack : 0.842
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_512|Q'
+Slack : 0.867
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_8192|Q'
+Slack : 1.108
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_16|Q'
+Slack : 1.172
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_32|Q'
+Slack : 1.189
+TNS   : 0.000
+
+Type  : Setup 'DivisorClock:div_clk|fft:div_524288|Q'
+Slack : 1.267
+TNS   : 0.000
+
+Type  : Hold 'REGA_Mode[0]'
+Slack : -5.536
+TNS   : -16.597
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_25|Q'
+Slack : -2.756
+TNS   : -8.257
+
+Type  : Hold 'clk'
+Slack : -1.807
+TNS   : -1.807
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_24|Q'
+Slack : -1.549
+TNS   : -5.956
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_524288|Q'
+Slack : -1.321
+TNS   : -1.321
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_32|Q'
+Slack : -1.243
+TNS   : -1.243
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_16|Q'
+Slack : -1.226
+TNS   : -1.226
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_8192|Q'
+Slack : -1.162
+TNS   : -1.162
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_512|Q'
+Slack : -0.921
+TNS   : -0.921
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_2097152|Q'
+Slack : -0.896
+TNS   : -0.896
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_32768|Q'
+Slack : -0.882
+TNS   : -0.882
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_128|Q'
+Slack : -0.879
+TNS   : -0.879
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_2048|Q'
+Slack : -0.879
+TNS   : -0.879
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_4|Q'
+Slack : -0.879
+TNS   : -0.879
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_131072|Q'
+Slack : -0.863
+TNS   : -0.863
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_4194304|Q'
+Slack : -0.621
+TNS   : -0.621
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_8388608|Q'
+Slack : -0.524
+TNS   : -0.524
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_16384|Q'
+Slack : -0.523
+TNS   : -0.523
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_1024|Q'
+Slack : -0.521
+TNS   : -0.521
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_256|Q'
+Slack : -0.521
+TNS   : -0.521
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_65536|Q'
+Slack : -0.521
+TNS   : -0.521
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_8|Q'
+Slack : -0.521
+TNS   : -0.521
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_1048576|Q'
+Slack : -0.520
+TNS   : -0.520
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_2|Q'
+Slack : -0.520
+TNS   : -0.520
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_64|Q'
+Slack : -0.520
+TNS   : -0.520
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_4096|Q'
+Slack : -0.263
+TNS   : -0.263
+
+Type  : Hold 'DivisorClock:div_clk|fft:div_262144|Q'
+Slack : -0.262
+TNS   : -0.262
+
+Type  : Minimum Pulse Width 'REGA_Mode[0]'
+Slack : -2.289
+TNS   : -13.851
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_1024|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_1048576|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_128|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_131072|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_16384|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_16|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_2048|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_2097152|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_24|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_256|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_25|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_262144|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_2|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_32768|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_32|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_4096|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_4194304|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_4|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_512|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_524288|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_64|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_65536|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_8192|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_8388608|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DivisorClock:div_clk|fft:div_8|Q'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

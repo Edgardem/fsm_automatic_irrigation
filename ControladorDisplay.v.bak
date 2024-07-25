@@ -1,0 +1,20 @@
+module ControladorDisplay (
+    input clk,
+	 input Aspersao,
+	 input Gotejamento,
+	 input Limpeza,
+    output reg [6:0] Segs
+);
+	wire [2:0] letras;
+	assign letras = [Aspersao, Gotejamento, Limpeza]
+
+    always @(*) begin
+        case (nivel)
+            3'b100: linhas_Matriz = 7'b1111111;
+            3'b010: linhas_Matriz = 7'b0111111;
+            3'b001: linhas_Matriz = 7'b0011111;
+            default: linhas_Matriz = 7'b1111111; 
+        endcase
+    end
+
+endmodule

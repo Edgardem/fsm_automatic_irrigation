@@ -1,0 +1,71 @@
+// Declaracao do modulo
+module RegaAutomatica (H, M, L, Us, Ua, T, reset, clk, Ve, Al, B_Adb,
+							  Bs, Vs, SEG_D, SEGs, linhas_Matriz, Colunas_Matriz);	
+							  
+	// Declaracao de portas
+	input H, M, L, Us, Ua, T, rst, clk, B_Adb;
+	output Bs, Vs, Ve, Al; 
+	output [3:0] SEG_D;
+	output [7:0] SEGs;
+	output [6:0] linhas_Matriz;
+	output [4:0] Colunas_Matriz;
+	
+	// Declaracao dos fios intermediarios
+	wire clock_Reduzido;
+	wire Start_fill, Nivel_Cheio, Fill_Complete;
+	wire WD, WS, N_Rega, VG, VA, Drip_complete;
+	wire Mist_Adb, Timer_Limpeza, Limpeza, Clean_complete;
+	
+	reg Adubou;
+	
+	// Funcionamento do circuito 
+							
+	//Modulo do divisor de Clock
+	DivisorClock Div1(.clock(clk),.clock_Reduzido(clock_Reduzido));
+	
+	 // Instanciação das MEFs
+	FILL mef_fill (
+		.clk(clk),
+		.reset(reset),
+		.Start_fill(Start_fill),
+		.Nivel_Cheio(Nivel_Cheio),
+		.Fill_Complete(Fill_Complete)
+	);
+	
+	WATERING_DRIP mef_watering_drip (
+		.clk(clk),
+		.reset(reset),
+		.WD(WD),
+		.N_Rega(N_Rega),
+		.VG(VG),
+		.Drip_complete(Drip_complete)
+	);
+	
+	WATERING_SPRINKLE mef_watering_sprinkle (
+		.clk(clk),
+		.reset(reset),
+		.WS(WS),
+		.N_Rega(N_Rega),
+		.VA(VA),
+		.Sprinkle_complete(Sprinkle_complete)
+	);
+	
+	FERTILIZING mef_fertilizing (
+		.clk(clk),
+		.reset(reset),
+		.VA(VA),
+		.B_Adb(B_Adb),
+		.Mist_Adb(Mist_Adb),
+		.Adubou(Adubou)
+	);
+	
+	MEF_CLEANING mef_cleaning (
+		.clk(clk),
+		.reset(reset),
+		.Timer_Limpeza(Timer_Limpeza),
+		.Limpeza(Limpeza),
+		.Clean_complete(Clean_complete)
+	);
+
+			
+endmodule 

@@ -1,0 +1,328 @@
+|RegaAutomatica
+reset => reset.IN3
+clk => clk.IN3
+B_Adb => B_Adb.IN1
+REGA_Mode[0] => REGA_Mode[0].IN1
+REGA_Mode[1] => REGA_Mode[1].IN1
+Ve << Ve.DB_MAX_OUTPUT_PORT_TYPE
+ERRO << ERRO.DB_MAX_OUTPUT_PORT_TYPE
+Gotejamento << Gotejamento.DB_MAX_OUTPUT_PORT_TYPE
+Aspersao << Aspersao.DB_MAX_OUTPUT_PORT_TYPE
+Mist_Adb << FERTILIZING:fertilizing.Mist_Adb
+linhas_Matriz[0] << ControladorMatriz:matriz_controlador.linhas_Matriz
+linhas_Matriz[1] << ControladorMatriz:matriz_controlador.linhas_Matriz
+linhas_Matriz[2] << ControladorMatriz:matriz_controlador.linhas_Matriz
+linhas_Matriz[3] << ControladorMatriz:matriz_controlador.linhas_Matriz
+linhas_Matriz[4] << ControladorMatriz:matriz_controlador.linhas_Matriz
+linhas_Matriz[5] << ControladorMatriz:matriz_controlador.linhas_Matriz
+linhas_Matriz[6] << ControladorMatriz:matriz_controlador.linhas_Matriz
+Colunas_Matriz[0] << <VCC>
+Colunas_Matriz[1] << <VCC>
+Colunas_Matriz[2] << <VCC>
+Colunas_Matriz[3] << <VCC>
+Colunas_Matriz[4] << <VCC>
+Segs[0] << ControladorDisplay:display_control.Segs
+Segs[1] << ControladorDisplay:display_control.Segs
+Segs[2] << ControladorDisplay:display_control.Segs
+Segs[3] << ControladorDisplay:display_control.Segs
+Segs[4] << ControladorDisplay:display_control.Segs
+Segs[5] << ControladorDisplay:display_control.Segs
+Segs[6] << ControladorDisplay:display_control.Segs
+Segs[7] << <GND>
+D_Segs[0] << <VCC>
+D_Segs[1] << <VCC>
+D_Segs[2] << <VCC>
+D_Segs[3] << <GND>
+
+
+|RegaAutomatica|DivisorClock:div_clk
+clock => clock.IN1
+slow_clk <= fft:div_26.Q
+medium_clk <= Q[24].DB_MAX_OUTPUT_PORT_TYPE
+fast_clk <= Q[23].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_2
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_4
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_8
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_16
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_32
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_64
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_128
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_256
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_512
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_1024
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_2048
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_4096
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_8192
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_16384
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_32768
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_65536
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_131072
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_262144
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_524288
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_1048576
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_2097152
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_4194304
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_8388608
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_24
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_25
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|DivisorClock:div_clk|fft:div_26
+T => Q~reg0.ENA
+clock => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|FILL:controle_encher
+Vazio => nextstate.DATAA
+Nivel_cheio => nextstate.DATAB
+clk => state~reg0.CLK
+reset => state~reg0.ACLR
+state <= state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|ContadorNivelAgua:contador_nivel
+reset => nivel[0]~reg0.ACLR
+reset => nivel[1]~reg0.ACLR
+reset => nivel[2]~reg0.ACLR
+Ctrl_clk => nivel[0]~reg0.CLK
+Ctrl_clk => nivel[1]~reg0.CLK
+Ctrl_clk => nivel[2]~reg0.CLK
+state => nivel.OUTPUTSELECT
+state => nivel.OUTPUTSELECT
+state => nivel.OUTPUTSELECT
+nivel[0] <= nivel[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+nivel[1] <= nivel[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+nivel[2] <= nivel[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|ControleFrequencia:controle_freq
+fast_clk => Fast_on.IN0
+fast_clk => Fast_on.IN0
+slow_clk => Slow_on.IN0
+medium_clk => Medium_on.IN0
+start_fill => Fast_on.IN1
+start_fill => always0.IN0
+Aspersao => Fast_on.IN1
+Aspersao => always0.IN1
+Gotejamento => Medium_on.IN1
+Gotejamento => Ctrl_clk.OUTPUTSELECT
+Limpeza => Slow_on.IN1
+Limpeza => Ctrl_clk.OUTPUTSELECT
+ERRO => ~NO_FANOUT~
+state => Fast_on.IN1
+state => always0.IN1
+Ctrl_clk <= Ctrl_clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|ControleRega:controle_rega
+REGA_Mode[0] => Equal0.IN0
+REGA_Mode[0] => Equal1.IN1
+REGA_Mode[0] => Equal2.IN1
+REGA_Mode[1] => Equal0.IN1
+REGA_Mode[1] => Equal1.IN0
+REGA_Mode[1] => Equal2.IN0
+Esvaziar => Aspersao.IN1
+Esvaziar => Gotejamento.IN1
+Esvaziar => ERRO.IN1
+Nivel_cheio => Aspersao.IN1
+Nivel_cheio => Gotejamento.IN1
+Nivel_cheio => ERRO.IN1
+Parada_Rega => Aspersao.IN1
+Parada_Rega => Gotejamento.IN1
+Limpeza => Aspersao.IN1
+Limpeza => Gotejamento.IN1
+Limpeza => ERRO.IN1
+Aspersao <= Aspersao.DB_MAX_OUTPUT_PORT_TYPE
+Gotejamento <= Gotejamento.DB_MAX_OUTPUT_PORT_TYPE
+ERRO <= ERRO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|ControleAdubacao:controle_adub
+Adubou => Parada_Rega.IN1
+Adubou => Limpeza.IN1
+Adubou => Parada_Rega.IN1
+Adubou => Vazio.IN1
+nivel[0] => LessThan0.IN6
+nivel[0] => Equal0.IN0
+nivel[0] => Equal1.IN2
+nivel[0] => Equal2.IN2
+nivel[1] => LessThan0.IN5
+nivel[1] => Equal0.IN2
+nivel[1] => Equal1.IN0
+nivel[1] => Equal2.IN1
+nivel[2] => LessThan0.IN4
+nivel[2] => Equal0.IN1
+nivel[2] => Equal1.IN1
+nivel[2] => Equal2.IN0
+Parada_Rega <= Parada_Rega.DB_MAX_OUTPUT_PORT_TYPE
+Limpeza <= Limpeza.DB_MAX_OUTPUT_PORT_TYPE
+Vazio <= Vazio.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|FERTILIZING:fertilizing
+Aspersao => always1.IN0
+Aspersao => Mist_Adb.IN1
+Vazio => nextstate.DATAB
+B_Adb => always1.IN1
+clk => state.CLK
+reset => state.ACLR
+Mist_Adb <= Mist_Adb.DB_MAX_OUTPUT_PORT_TYPE
+Adubou <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|ControladorMatriz:matriz_controlador
+nivel[0] => Decoder0.IN2
+nivel[1] => Decoder0.IN1
+nivel[1] => Decoder1.IN1
+nivel[2] => Decoder0.IN0
+nivel[2] => Decoder1.IN0
+nivel[2] => linhas_Matriz[3].DATAIN
+linhas_Matriz[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+linhas_Matriz[1] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+linhas_Matriz[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+linhas_Matriz[3] <= nivel[2].DB_MAX_OUTPUT_PORT_TYPE
+linhas_Matriz[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+linhas_Matriz[5] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+linhas_Matriz[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RegaAutomatica|ControladorDisplay:display_control
+ERRO => Decoder0.IN3
+Aspersao => Decoder0.IN0
+Gotejamento => Decoder0.IN1
+Limpeza => Decoder0.IN2
+Segs[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+Segs[1] <= Segs.DB_MAX_OUTPUT_PORT_TYPE
+Segs[2] <= Segs.DB_MAX_OUTPUT_PORT_TYPE
+Segs[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+Segs[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+Segs[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Segs[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

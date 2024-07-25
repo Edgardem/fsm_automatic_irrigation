@@ -1,0 +1,34 @@
+module NivelAguaControl (
+    input clk,
+    input reset,
+    input start_fill,
+    input slow_clk,
+    input fast_clk,
+    output reg Nivel_Cheio,
+    output reg Nivel_minimo,
+    output reg Nivel_critico
+);
+
+    reg [2:0] nivel; // Nível atual de água: 0 a 7
+
+    always @(posedge slow_clk or posedge fast_clk or posedge reset) begin
+        if (reset) begin
+            nivel <= 3'b000;
+        end else if (start_fill) begin
+            if (slow_clk) begin
+                if (nivel < 3'b111)
+                    nivel <= nivel + 1;
+            end else if (fast_clk) begin
+                if (nivel > 3'b000)
+                    nivel <= nivel - 1;
+            end
+        end
+    end
+
+    always @(*) begin
+        Nivel_Cheio = (nivel == 3'b111);
+        Nivel_minimo = (nivel > 3'b000 && nivel <= 3'b011);
+        Nivel_critico = (nivel == 3'b000);
+    end
+
+endmodule

@@ -1,0 +1,16 @@
+module ControleRega (
+    input [1:0] REGA_Mode,
+    input start_fill,
+    input Parada_Rega,
+    output reg Aspersao,
+    output reg Gotejamento,
+    output reg ERRO
+);
+
+    always @(*) begin
+        Aspersao = (REGA_Mode == 2'b01) && !start_fill && !Parada_Rega;
+        Gotejamento = (REGA_Mode == 2'b10) && !start_fill && !Parada_Rega;
+        ERRO = (REGA_Mode == 2'b11) && !start_fill;
+    end
+
+endmodule

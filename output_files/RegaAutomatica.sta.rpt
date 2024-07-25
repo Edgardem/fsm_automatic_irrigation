@@ -1,0 +1,1452 @@
+Timing Analyzer report for RegaAutomatica
+Wed Jul 24 14:46:18 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'DivisorClock:div_clk|fft:div_24|Q'
+ 13. Setup: 'DivisorClock:div_clk|fft:div_25|Q'
+ 14. Setup: 'REGA_Mode[0]'
+ 15. Setup: 'DivisorClock:div_clk|fft:div_262144|Q'
+ 16. Setup: 'DivisorClock:div_clk|fft:div_4096|Q'
+ 17. Setup: 'DivisorClock:div_clk|fft:div_1048576|Q'
+ 18. Setup: 'DivisorClock:div_clk|fft:div_2|Q'
+ 19. Setup: 'DivisorClock:div_clk|fft:div_64|Q'
+ 20. Setup: 'DivisorClock:div_clk|fft:div_1024|Q'
+ 21. Setup: 'DivisorClock:div_clk|fft:div_256|Q'
+ 22. Setup: 'DivisorClock:div_clk|fft:div_65536|Q'
+ 23. Setup: 'DivisorClock:div_clk|fft:div_8|Q'
+ 24. Setup: 'DivisorClock:div_clk|fft:div_16384|Q'
+ 25. Setup: 'DivisorClock:div_clk|fft:div_8388608|Q'
+ 26. Setup: 'DivisorClock:div_clk|fft:div_4194304|Q'
+ 27. Setup: 'DivisorClock:div_clk|fft:div_131072|Q'
+ 28. Setup: 'DivisorClock:div_clk|fft:div_128|Q'
+ 29. Setup: 'DivisorClock:div_clk|fft:div_2048|Q'
+ 30. Setup: 'DivisorClock:div_clk|fft:div_4|Q'
+ 31. Setup: 'DivisorClock:div_clk|fft:div_32768|Q'
+ 32. Setup: 'DivisorClock:div_clk|fft:div_2097152|Q'
+ 33. Setup: 'DivisorClock:div_clk|fft:div_512|Q'
+ 34. Setup: 'DivisorClock:div_clk|fft:div_8192|Q'
+ 35. Setup: 'DivisorClock:div_clk|fft:div_16|Q'
+ 36. Setup: 'DivisorClock:div_clk|fft:div_32|Q'
+ 37. Setup: 'DivisorClock:div_clk|fft:div_524288|Q'
+ 38. Hold: 'REGA_Mode[0]'
+ 39. Hold: 'DivisorClock:div_clk|fft:div_25|Q'
+ 40. Hold: 'clk'
+ 41. Hold: 'DivisorClock:div_clk|fft:div_24|Q'
+ 42. Hold: 'DivisorClock:div_clk|fft:div_524288|Q'
+ 43. Hold: 'DivisorClock:div_clk|fft:div_32|Q'
+ 44. Hold: 'DivisorClock:div_clk|fft:div_16|Q'
+ 45. Hold: 'DivisorClock:div_clk|fft:div_8192|Q'
+ 46. Hold: 'DivisorClock:div_clk|fft:div_512|Q'
+ 47. Hold: 'DivisorClock:div_clk|fft:div_2097152|Q'
+ 48. Hold: 'DivisorClock:div_clk|fft:div_32768|Q'
+ 49. Hold: 'DivisorClock:div_clk|fft:div_128|Q'
+ 50. Hold: 'DivisorClock:div_clk|fft:div_2048|Q'
+ 51. Hold: 'DivisorClock:div_clk|fft:div_4|Q'
+ 52. Hold: 'DivisorClock:div_clk|fft:div_131072|Q'
+ 53. Hold: 'DivisorClock:div_clk|fft:div_4194304|Q'
+ 54. Hold: 'DivisorClock:div_clk|fft:div_8388608|Q'
+ 55. Hold: 'DivisorClock:div_clk|fft:div_16384|Q'
+ 56. Hold: 'DivisorClock:div_clk|fft:div_1024|Q'
+ 57. Hold: 'DivisorClock:div_clk|fft:div_256|Q'
+ 58. Hold: 'DivisorClock:div_clk|fft:div_65536|Q'
+ 59. Hold: 'DivisorClock:div_clk|fft:div_8|Q'
+ 60. Hold: 'DivisorClock:div_clk|fft:div_1048576|Q'
+ 61. Hold: 'DivisorClock:div_clk|fft:div_2|Q'
+ 62. Hold: 'DivisorClock:div_clk|fft:div_64|Q'
+ 63. Hold: 'DivisorClock:div_clk|fft:div_4096|Q'
+ 64. Hold: 'DivisorClock:div_clk|fft:div_262144|Q'
+ 65. Setup Transfers
+ 66. Hold Transfers
+ 67. Report TCCS
+ 68. Report RSKM
+ 69. Unconstrained Paths Summary
+ 70. Clock Status Summary
+ 71. Unconstrained Input Ports
+ 72. Unconstrained Output Ports
+ 73. Unconstrained Input Ports
+ 74. Unconstrained Output Ports
+ 75. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; RegaAutomatica                                      ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM240T100C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                         ;
++----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------+
+; Clock Name                             ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                    ;
++----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------+
+; clk                                    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                    ;
+; DivisorClock:div_clk|fft:div_2|Q       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_2|Q }       ;
+; DivisorClock:div_clk|fft:div_4|Q       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_4|Q }       ;
+; DivisorClock:div_clk|fft:div_8|Q       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_8|Q }       ;
+; DivisorClock:div_clk|fft:div_16|Q      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_16|Q }      ;
+; DivisorClock:div_clk|fft:div_24|Q      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_24|Q }      ;
+; DivisorClock:div_clk|fft:div_25|Q      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_25|Q }      ;
+; DivisorClock:div_clk|fft:div_32|Q      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_32|Q }      ;
+; DivisorClock:div_clk|fft:div_64|Q      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_64|Q }      ;
+; DivisorClock:div_clk|fft:div_128|Q     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_128|Q }     ;
+; DivisorClock:div_clk|fft:div_256|Q     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_256|Q }     ;
+; DivisorClock:div_clk|fft:div_512|Q     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_512|Q }     ;
+; DivisorClock:div_clk|fft:div_1024|Q    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_1024|Q }    ;
+; DivisorClock:div_clk|fft:div_2048|Q    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_2048|Q }    ;
+; DivisorClock:div_clk|fft:div_4096|Q    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_4096|Q }    ;
+; DivisorClock:div_clk|fft:div_8192|Q    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_8192|Q }    ;
+; DivisorClock:div_clk|fft:div_16384|Q   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_16384|Q }   ;
+; DivisorClock:div_clk|fft:div_32768|Q   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_32768|Q }   ;
+; DivisorClock:div_clk|fft:div_65536|Q   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_65536|Q }   ;
+; DivisorClock:div_clk|fft:div_131072|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_131072|Q }  ;
+; DivisorClock:div_clk|fft:div_262144|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_262144|Q }  ;
+; DivisorClock:div_clk|fft:div_524288|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_524288|Q }  ;
+; DivisorClock:div_clk|fft:div_1048576|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_1048576|Q } ;
+; DivisorClock:div_clk|fft:div_2097152|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_2097152|Q } ;
+; DivisorClock:div_clk|fft:div_4194304|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_4194304|Q } ;
+; DivisorClock:div_clk|fft:div_8388608|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DivisorClock:div_clk|fft:div_8388608|Q } ;
+; REGA_Mode[0]                           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { REGA_Mode[0] }                           ;
++----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Fmax Summary                                                            ;
++------------+-----------------+-----------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                        ; Note ;
++------------+-----------------+-----------------------------------+------+
+; 184.67 MHz ; 184.67 MHz      ; clk                               ;      ;
+; 257.53 MHz ; 257.53 MHz      ; REGA_Mode[0]                      ;      ;
+; 365.23 MHz ; 365.23 MHz      ; DivisorClock:div_clk|fft:div_24|Q ;      ;
+; 365.23 MHz ; 365.23 MHz      ; DivisorClock:div_clk|fft:div_25|Q ;      ;
++------------+-----------------+-----------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------------------------------------+
+; Setup Summary                                                    ;
++----------------------------------------+---------+---------------+
+; Clock                                  ; Slack   ; End Point TNS ;
++----------------------------------------+---------+---------------+
+; clk                                    ; -14.612 ; -28.776       ;
+; DivisorClock:div_clk|fft:div_24|Q      ; -5.725  ; -17.084       ;
+; DivisorClock:div_clk|fft:div_25|Q      ; -4.518  ; -14.677       ;
+; REGA_Mode[0]                           ; -2.883  ; -8.558        ;
+; DivisorClock:div_clk|fft:div_262144|Q  ; 0.208   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_4096|Q    ; 0.209   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_1048576|Q ; 0.466   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_2|Q       ; 0.466   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_64|Q      ; 0.466   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_1024|Q    ; 0.467   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_256|Q     ; 0.467   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_65536|Q   ; 0.467   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_8|Q       ; 0.467   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_16384|Q   ; 0.469   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_8388608|Q ; 0.470   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_4194304|Q ; 0.567   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_131072|Q  ; 0.809   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_128|Q     ; 0.825   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_2048|Q    ; 0.825   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_4|Q       ; 0.825   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_32768|Q   ; 0.828   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_2097152|Q ; 0.842   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_512|Q     ; 0.867   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_8192|Q    ; 1.108   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_16|Q      ; 1.172   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_32|Q      ; 1.189   ; 0.000         ;
+; DivisorClock:div_clk|fft:div_524288|Q  ; 1.267   ; 0.000         ;
++----------------------------------------+---------+---------------+
+
+
++-----------------------------------------------------------------+
+; Hold Summary                                                    ;
++----------------------------------------+--------+---------------+
+; Clock                                  ; Slack  ; End Point TNS ;
++----------------------------------------+--------+---------------+
+; REGA_Mode[0]                           ; -5.536 ; -16.597       ;
+; DivisorClock:div_clk|fft:div_25|Q      ; -2.756 ; -8.257        ;
+; clk                                    ; -1.807 ; -1.807        ;
+; DivisorClock:div_clk|fft:div_24|Q      ; -1.549 ; -5.956        ;
+; DivisorClock:div_clk|fft:div_524288|Q  ; -1.321 ; -1.321        ;
+; DivisorClock:div_clk|fft:div_32|Q      ; -1.243 ; -1.243        ;
+; DivisorClock:div_clk|fft:div_16|Q      ; -1.226 ; -1.226        ;
+; DivisorClock:div_clk|fft:div_8192|Q    ; -1.162 ; -1.162        ;
+; DivisorClock:div_clk|fft:div_512|Q     ; -0.921 ; -0.921        ;
+; DivisorClock:div_clk|fft:div_2097152|Q ; -0.896 ; -0.896        ;
+; DivisorClock:div_clk|fft:div_32768|Q   ; -0.882 ; -0.882        ;
+; DivisorClock:div_clk|fft:div_128|Q     ; -0.879 ; -0.879        ;
+; DivisorClock:div_clk|fft:div_2048|Q    ; -0.879 ; -0.879        ;
+; DivisorClock:div_clk|fft:div_4|Q       ; -0.879 ; -0.879        ;
+; DivisorClock:div_clk|fft:div_131072|Q  ; -0.863 ; -0.863        ;
+; DivisorClock:div_clk|fft:div_4194304|Q ; -0.621 ; -0.621        ;
+; DivisorClock:div_clk|fft:div_8388608|Q ; -0.524 ; -0.524        ;
+; DivisorClock:div_clk|fft:div_16384|Q   ; -0.523 ; -0.523        ;
+; DivisorClock:div_clk|fft:div_1024|Q    ; -0.521 ; -0.521        ;
+; DivisorClock:div_clk|fft:div_256|Q     ; -0.521 ; -0.521        ;
+; DivisorClock:div_clk|fft:div_65536|Q   ; -0.521 ; -0.521        ;
+; DivisorClock:div_clk|fft:div_8|Q       ; -0.521 ; -0.521        ;
+; DivisorClock:div_clk|fft:div_1048576|Q ; -0.520 ; -0.520        ;
+; DivisorClock:div_clk|fft:div_2|Q       ; -0.520 ; -0.520        ;
+; DivisorClock:div_clk|fft:div_64|Q      ; -0.520 ; -0.520        ;
+; DivisorClock:div_clk|fft:div_4096|Q    ; -0.263 ; -0.263        ;
+; DivisorClock:div_clk|fft:div_262144|Q  ; -0.262 ; -0.262        ;
++----------------------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-----------------------------------------------------------------+
+; Minimum Pulse Width Summary                                     ;
++----------------------------------------+--------+---------------+
+; Clock                                  ; Slack  ; End Point TNS ;
++----------------------------------------+--------+---------------+
+; REGA_Mode[0]                           ; -2.289 ; -13.851       ;
+; clk                                    ; -2.289 ; -2.289        ;
+; DivisorClock:div_clk|fft:div_1024|Q    ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_1048576|Q ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_128|Q     ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_131072|Q  ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_16384|Q   ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_16|Q      ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_2048|Q    ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_2097152|Q ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_24|Q      ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_256|Q     ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_25|Q      ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_262144|Q  ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_2|Q       ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_32768|Q   ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_32|Q      ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_4096|Q    ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_4194304|Q ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_4|Q       ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_512|Q     ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_524288|Q  ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_64|Q      ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_65536|Q   ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_8192|Q    ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_8388608|Q ; 0.234  ; 0.000         ;
+; DivisorClock:div_clk|fft:div_8|Q       ; 0.234  ; 0.000         ;
++----------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                                      ;
++---------+-------------------------------------------+----------------------------------+-----------------------------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                 ; To Node                          ; Launch Clock                      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-------------------------------------------+----------------------------------+-----------------------------------+-------------+--------------+------------+------------+
+; -14.612 ; ContadorNivelAgua:contador_nivel|nivel[0] ; FERTILIZING:fertilizing|state    ; REGA_Mode[0]                      ; clk         ; 1.000        ; -8.882     ; 6.397      ;
+; -14.438 ; ContadorNivelAgua:contador_nivel|nivel[1] ; FERTILIZING:fertilizing|state    ; REGA_Mode[0]                      ; clk         ; 1.000        ; -8.882     ; 6.223      ;
+; -14.164 ; ContadorNivelAgua:contador_nivel|nivel[0] ; FILL:controle_encher|state       ; REGA_Mode[0]                      ; clk         ; 1.000        ; -8.882     ; 5.949      ;
+; -14.091 ; ContadorNivelAgua:contador_nivel|nivel[2] ; FERTILIZING:fertilizing|state    ; REGA_Mode[0]                      ; clk         ; 1.000        ; -8.882     ; 5.876      ;
+; -13.990 ; ContadorNivelAgua:contador_nivel|nivel[1] ; FILL:controle_encher|state       ; REGA_Mode[0]                      ; clk         ; 1.000        ; -8.882     ; 5.775      ;
+; -13.731 ; ContadorNivelAgua:contador_nivel|nivel[2] ; FILL:controle_encher|state       ; REGA_Mode[0]                      ; clk         ; 1.000        ; -8.882     ; 5.516      ;
+; -11.832 ; ContadorNivelAgua:contador_nivel|nivel[0] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 1.000        ; -6.102     ; 6.397      ;
+; -11.658 ; ContadorNivelAgua:contador_nivel|nivel[1] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 1.000        ; -6.102     ; 6.223      ;
+; -11.384 ; ContadorNivelAgua:contador_nivel|nivel[0] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 1.000        ; -6.102     ; 5.949      ;
+; -11.311 ; ContadorNivelAgua:contador_nivel|nivel[2] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 1.000        ; -6.102     ; 5.876      ;
+; -11.210 ; ContadorNivelAgua:contador_nivel|nivel[1] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 1.000        ; -6.102     ; 5.775      ;
+; -10.951 ; ContadorNivelAgua:contador_nivel|nivel[2] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 1.000        ; -6.102     ; 5.516      ;
+; -10.625 ; ContadorNivelAgua:contador_nivel|nivel[0] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 1.000        ; -4.895     ; 6.397      ;
+; -10.451 ; ContadorNivelAgua:contador_nivel|nivel[1] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 1.000        ; -4.895     ; 6.223      ;
+; -10.177 ; ContadorNivelAgua:contador_nivel|nivel[0] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 1.000        ; -4.895     ; 5.949      ;
+; -10.104 ; ContadorNivelAgua:contador_nivel|nivel[2] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 1.000        ; -4.895     ; 5.876      ;
+; -10.003 ; ContadorNivelAgua:contador_nivel|nivel[1] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 1.000        ; -4.895     ; 5.775      ;
+; -9.744  ; ContadorNivelAgua:contador_nivel|nivel[2] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 1.000        ; -4.895     ; 5.516      ;
+; -4.415  ; FERTILIZING:fertilizing|state             ; FERTILIZING:fertilizing|state    ; clk                               ; clk         ; 1.000        ; 0.000      ; 5.082      ;
+; -4.255  ; FILL:controle_encher|state                ; FERTILIZING:fertilizing|state    ; clk                               ; clk         ; 1.000        ; 0.000      ; 4.922      ;
+; -3.967  ; FERTILIZING:fertilizing|state             ; FILL:controle_encher|state       ; clk                               ; clk         ; 1.000        ; 0.000      ; 4.634      ;
+; -2.932  ; FILL:controle_encher|state                ; FILL:controle_encher|state       ; clk                               ; clk         ; 1.000        ; 0.000      ; 3.599      ;
+; -2.080  ; REGA_Mode[0]                              ; FERTILIZING:fertilizing|state    ; REGA_Mode[0]                      ; clk         ; 0.500        ; 3.348      ; 5.595      ;
+; -1.580  ; REGA_Mode[0]                              ; FERTILIZING:fertilizing|state    ; REGA_Mode[0]                      ; clk         ; 1.000        ; 3.348      ; 5.595      ;
+; 1.753   ; DivisorClock:div_clk|fft:div_2|Q          ; DivisorClock:div_clk|fft:div_2|Q ; DivisorClock:div_clk|fft:div_2|Q  ; clk         ; 0.500        ; 3.348      ; 2.138      ;
+; 2.253   ; DivisorClock:div_clk|fft:div_2|Q          ; DivisorClock:div_clk|fft:div_2|Q ; DivisorClock:div_clk|fft:div_2|Q  ; clk         ; 1.000        ; 3.348      ; 2.138      ;
++---------+-------------------------------------------+----------------------------------+-----------------------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_24|Q'                                                                                                                                                                      ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                                   ; Launch Clock                      ; Latch Clock                       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; -5.725 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -3.987     ; 2.405      ;
+; -5.684 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -3.987     ; 2.364      ;
+; -5.675 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -3.987     ; 2.355      ;
+; -5.649 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -3.987     ; 2.329      ;
+; -5.510 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -3.987     ; 2.190      ;
+; -5.509 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -3.987     ; 2.189      ;
+; -5.506 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -3.987     ; 2.186      ;
+; -5.260 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -3.987     ; 1.940      ;
+; -5.250 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -3.987     ; 1.930      ;
+; -2.945 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -1.207     ; 2.405      ;
+; -2.904 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -1.207     ; 2.364      ;
+; -2.895 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -1.207     ; 2.355      ;
+; -2.869 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -1.207     ; 2.329      ;
+; -2.730 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -1.207     ; 2.190      ;
+; -2.729 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -1.207     ; 2.189      ;
+; -2.726 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -1.207     ; 2.186      ;
+; -2.480 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -1.207     ; 1.940      ;
+; -2.470 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; -1.207     ; 1.930      ;
+; -1.738 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 0.000      ; 2.405      ;
+; -1.697 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 0.000      ; 2.364      ;
+; -1.688 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 0.000      ; 2.355      ;
+; -1.662 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 0.000      ; 2.329      ;
+; -1.523 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 0.000      ; 2.190      ;
+; -1.522 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 0.000      ; 2.189      ;
+; -1.519 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 0.000      ; 2.186      ;
+; -1.273 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 0.000      ; 1.940      ;
+; -1.263 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 0.000      ; 1.930      ;
+; 1.266  ; DivisorClock:div_clk|fft:div_25|Q         ; DivisorClock:div_clk|fft:div_25|Q         ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.500        ; 2.886      ; 2.163      ;
+; 1.766  ; DivisorClock:div_clk|fft:div_25|Q         ; DivisorClock:div_clk|fft:div_25|Q         ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 2.886      ; 2.163      ;
+; 1.988  ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[2] ; clk                               ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 4.895      ; 3.574      ;
+; 1.991  ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[0] ; clk                               ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 4.895      ; 3.571      ;
+; 1.995  ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[1] ; clk                               ; DivisorClock:div_clk|fft:div_24|Q ; 1.000        ; 4.895      ; 3.567      ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_25|Q'                                                                                                                                                                      ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                                   ; Launch Clock                      ; Latch Clock                       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; -4.518 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; -2.780     ; 2.405      ;
+; -4.477 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; -2.780     ; 2.364      ;
+; -4.468 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; -2.780     ; 2.355      ;
+; -4.442 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; -2.780     ; 2.329      ;
+; -4.303 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; -2.780     ; 2.190      ;
+; -4.302 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; -2.780     ; 2.189      ;
+; -4.299 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; -2.780     ; 2.186      ;
+; -4.053 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; -2.780     ; 1.940      ;
+; -4.043 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; -2.780     ; 1.930      ;
+; -1.738 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 0.000      ; 2.405      ;
+; -1.697 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 0.000      ; 2.364      ;
+; -1.688 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 0.000      ; 2.355      ;
+; -1.662 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 0.000      ; 2.329      ;
+; -1.523 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 0.000      ; 2.190      ;
+; -1.522 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 0.000      ; 2.189      ;
+; -1.519 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 0.000      ; 2.186      ;
+; -1.273 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 0.000      ; 1.940      ;
+; -1.263 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 0.000      ; 1.930      ;
+; -1.214 ; DivisorClock:div_clk|fft:div_26|Q         ; DivisorClock:div_clk|fft:div_26|Q         ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 0.000      ; 1.881      ;
+; -0.531 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 1.207      ; 2.405      ;
+; -0.490 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 1.207      ; 2.364      ;
+; -0.481 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 1.207      ; 2.355      ;
+; -0.455 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 1.207      ; 2.329      ;
+; -0.316 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 1.207      ; 2.190      ;
+; -0.315 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 1.207      ; 2.189      ;
+; -0.312 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 1.207      ; 2.186      ;
+; -0.066 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 1.207      ; 1.940      ;
+; -0.056 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 1.207      ; 1.930      ;
+; 3.195  ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[2] ; clk                               ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 6.102      ; 3.574      ;
+; 3.198  ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[0] ; clk                               ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 6.102      ; 3.571      ;
+; 3.202  ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[1] ; clk                               ; DivisorClock:div_clk|fft:div_25|Q ; 1.000        ; 6.102      ; 3.567      ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'REGA_Mode[0]'                                                                                                                                                                      ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+--------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                                   ; Launch Clock                      ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+--------------+--------------+------------+------------+
+; -2.883 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 1.000        ; -1.145     ; 2.405      ;
+; -2.842 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 1.000        ; -1.145     ; 2.364      ;
+; -2.833 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 1.000        ; -1.145     ; 2.355      ;
+; -2.807 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 1.000        ; -1.145     ; 2.329      ;
+; -2.668 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 1.000        ; -1.145     ; 2.190      ;
+; -2.667 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 1.000        ; -1.145     ; 2.189      ;
+; -2.664 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 1.000        ; -1.145     ; 2.186      ;
+; -2.418 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 1.000        ; -1.145     ; 1.940      ;
+; -2.408 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 1.000        ; -1.145     ; 1.930      ;
+; -0.103 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 1.000        ; 1.635      ; 2.405      ;
+; -0.062 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 1.000        ; 1.635      ; 2.364      ;
+; -0.053 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 1.000        ; 1.635      ; 2.355      ;
+; -0.027 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 1.000        ; 1.635      ; 2.329      ;
+; 0.112  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 1.000        ; 1.635      ; 2.190      ;
+; 0.113  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 1.000        ; 1.635      ; 2.189      ;
+; 0.116  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 1.000        ; 1.635      ; 2.186      ;
+; 0.362  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 1.000        ; 1.635      ; 1.940      ;
+; 0.372  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 1.000        ; 1.635      ; 1.930      ;
+; 1.104  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 1.000        ; 2.842      ; 2.405      ;
+; 1.145  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 1.000        ; 2.842      ; 2.364      ;
+; 1.154  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 1.000        ; 2.842      ; 2.355      ;
+; 1.180  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 1.000        ; 2.842      ; 2.329      ;
+; 1.319  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 1.000        ; 2.842      ; 2.190      ;
+; 1.320  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 1.000        ; 2.842      ; 2.189      ;
+; 1.323  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 1.000        ; 2.842      ; 2.186      ;
+; 1.569  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 1.000        ; 2.842      ; 1.940      ;
+; 1.579  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 1.000        ; 2.842      ; 1.930      ;
+; 4.830  ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[2] ; clk                               ; REGA_Mode[0] ; 1.000        ; 7.737      ; 3.574      ;
+; 4.833  ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[0] ; clk                               ; REGA_Mode[0] ; 1.000        ; 7.737      ; 3.571      ;
+; 4.837  ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[1] ; clk                               ; REGA_Mode[0] ; 1.000        ; 7.737      ; 3.567      ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+--------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_262144|Q'                                                                                                                                                                 ;
++-------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock                          ; Latch Clock                           ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+; 0.208 ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_262144|Q ; 0.500        ; 1.785      ; 2.120      ;
+; 0.708 ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_262144|Q ; 1.000        ; 1.785      ; 2.120      ;
++-------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_4096|Q'                                                                                                                                                           ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock                        ; Latch Clock                         ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; 0.209 ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_4096|Q ; 0.500        ; 1.785      ; 2.119      ;
+; 0.709 ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_4096|Q ; 1.000        ; 1.785      ; 2.119      ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_1048576|Q'                                                                                                                                                                    ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; 0.466 ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; 0.500        ; 1.784      ; 1.861      ;
+; 0.966 ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; 1.000        ; 1.784      ; 1.861      ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_2|Q'                                                                                                                                                  ;
++-------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                          ; Launch Clock                     ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; 0.466 ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_2|Q ; 0.500        ; 1.784      ; 1.861      ;
+; 0.966 ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_2|Q ; 1.000        ; 1.784      ; 1.861      ;
++-------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_64|Q'                                                                                                                                                        ;
++-------+------------------------------------+------------------------------------+------------------------------------+-----------------------------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock                       ; Latch Clock                       ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+------------------------------------+-----------------------------------+--------------+------------+------------+
+; 0.466 ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_64|Q ; 0.500        ; 1.784      ; 1.861      ;
+; 0.966 ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_64|Q ; 1.000        ; 1.784      ; 1.861      ;
++-------+------------------------------------+------------------------------------+------------------------------------+-----------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_1024|Q'                                                                                                                                                           ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock                        ; Latch Clock                         ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; 0.467 ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_1024|Q ; 0.500        ; 1.785      ; 1.861      ;
+; 0.967 ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_1024|Q ; 1.000        ; 1.785      ; 1.861      ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_256|Q'                                                                                                                                                        ;
++-------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock                       ; Latch Clock                        ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; 0.467 ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_256|Q ; 0.500        ; 1.785      ; 1.861      ;
+; 0.967 ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_256|Q ; 1.000        ; 1.785      ; 1.861      ;
++-------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_65536|Q'                                                                                                                                                                 ;
++-------+---------------------------------------+---------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock                          ; Latch Clock                          ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+; 0.467 ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_65536|Q ; 0.500        ; 1.784      ; 1.860      ;
+; 0.967 ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_65536|Q ; 1.000        ; 1.784      ; 1.860      ;
++-------+---------------------------------------+---------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_8|Q'                                                                                                                                                     ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node                           ; Launch Clock                      ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------+--------------+------------+------------+
+; 0.467 ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_8|Q ; 0.500        ; 1.785      ; 1.861      ;
+; 0.967 ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_8|Q ; 1.000        ; 1.785      ; 1.861      ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_16384|Q'                                                                                                                                                              ;
++-------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                              ; Launch Clock                         ; Latch Clock                          ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; 0.469 ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_16384|Q ; 0.500        ; 1.787      ; 1.861      ;
+; 0.969 ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_16384|Q ; 1.000        ; 1.787      ; 1.861      ;
++-------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_8388608|Q'                                                                                                                                                     ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node                           ; Launch Clock                      ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------------+--------------+------------+------------+
+; 0.470 ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; 0.500        ; 1.787      ; 1.860      ;
+; 0.970 ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; 1.000        ; 1.787      ; 1.860      ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_4194304|Q'                                                                                                                                                                    ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; 0.567 ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; 0.500        ; 2.160      ; 2.136      ;
+; 1.067 ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; 1.000        ; 2.160      ; 2.136      ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_131072|Q'                                                                                                                                                                 ;
++-------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock                          ; Latch Clock                           ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+; 0.809 ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_131072|Q ; 0.500        ; 2.144      ; 1.878      ;
+; 1.309 ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_131072|Q ; 1.000        ; 2.144      ; 1.878      ;
++-------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_128|Q'                                                                                                                                                        ;
++-------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock                       ; Latch Clock                        ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; 0.825 ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_128|Q ; 0.500        ; 2.160      ; 1.878      ;
+; 1.325 ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_128|Q ; 1.000        ; 2.160      ; 1.878      ;
++-------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_2048|Q'                                                                                                                                                           ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock                        ; Latch Clock                         ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; 0.825 ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_2048|Q ; 0.500        ; 2.160      ; 1.878      ;
+; 1.325 ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_2048|Q ; 1.000        ; 2.160      ; 1.878      ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_4|Q'                                                                                                                                                  ;
++-------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                          ; Launch Clock                     ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; 0.825 ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_4|Q ; 0.500        ; 2.160      ; 1.878      ;
+; 1.325 ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_4|Q ; 1.000        ; 2.160      ; 1.878      ;
++-------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_32768|Q'                                                                                                                                                              ;
++-------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                              ; Launch Clock                         ; Latch Clock                          ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; 0.828 ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_32768|Q ; 0.500        ; 2.164      ; 1.879      ;
+; 1.328 ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_32768|Q ; 1.000        ; 2.164      ; 1.879      ;
++-------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_2097152|Q'                                                                                                                                                                    ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; 0.842 ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; 0.500        ; 2.160      ; 1.861      ;
+; 1.342 ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; 1.000        ; 2.160      ; 1.861      ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_512|Q'                                                                                                                                                           ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+------------------------------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock                        ; Latch Clock                        ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+------------------------------------+--------------+------------+------------+
+; 0.867 ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_512|Q ; 0.500        ; 2.202      ; 1.878      ;
+; 1.367 ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_512|Q ; 1.000        ; 2.202      ; 1.878      ;
++-------+-------------------------------------+-------------------------------------+-------------------------------------+------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_8192|Q'                                                                                                                                                              ;
++-------+--------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                              ; Launch Clock                         ; Latch Clock                         ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------+--------------+------------+------------+
+; 1.108 ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_8192|Q ; 0.500        ; 2.701      ; 2.136      ;
+; 1.608 ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_8192|Q ; 1.000        ; 2.701      ; 2.136      ;
++-------+--------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_16|Q'                                                                                                                                                     ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node                           ; Launch Clock                      ; Latch Clock                       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; 1.172 ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_16|Q ; 0.500        ; 2.758      ; 2.129      ;
+; 1.672 ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_16|Q ; 1.000        ; 2.758      ; 2.129      ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_32|Q'                                                                                                                                                     ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node                           ; Launch Clock                      ; Latch Clock                       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; 1.189 ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_32|Q ; 0.500        ; 2.784      ; 2.138      ;
+; 1.689 ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_32|Q ; 1.000        ; 2.784      ; 2.138      ;
++-------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DivisorClock:div_clk|fft:div_524288|Q'                                                                                                                                                                    ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+---------------------------------------+--------------+------------+------------+
+; Slack ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock                           ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+---------------------------------------+--------------+------------+------------+
+; 1.267 ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_524288|Q ; 0.500        ; 2.862      ; 2.138      ;
+; 1.767 ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_524288|Q ; 1.000        ; 2.862      ; 2.138      ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+---------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'REGA_Mode[0]'                                                                                                                                                                       ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+--------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                                   ; Launch Clock                      ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+--------------+--------------+------------+------------+
+; -5.536 ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[1] ; clk                               ; REGA_Mode[0] ; 0.000        ; 8.882      ; 3.567      ;
+; -5.532 ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[0] ; clk                               ; REGA_Mode[0] ; 0.000        ; 8.882      ; 3.571      ;
+; -5.529 ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[2] ; clk                               ; REGA_Mode[0] ; 0.000        ; 8.882      ; 3.574      ;
+; -2.278 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 0.000        ; 3.987      ; 1.930      ;
+; -2.268 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 0.000        ; 3.987      ; 1.940      ;
+; -2.022 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 0.000        ; 3.987      ; 2.186      ;
+; -2.019 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 0.000        ; 3.987      ; 2.189      ;
+; -2.018 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 0.000        ; 3.987      ; 2.190      ;
+; -1.879 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 0.000        ; 3.987      ; 2.329      ;
+; -1.853 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 0.000        ; 3.987      ; 2.355      ;
+; -1.844 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 0.000        ; 3.987      ; 2.364      ;
+; -1.803 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; REGA_Mode[0] ; 0.000        ; 3.987      ; 2.405      ;
+; -1.071 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 0.000        ; 2.780      ; 1.930      ;
+; -1.061 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 0.000        ; 2.780      ; 1.940      ;
+; -0.815 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 0.000        ; 2.780      ; 2.186      ;
+; -0.812 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 0.000        ; 2.780      ; 2.189      ;
+; -0.811 ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 0.000        ; 2.780      ; 2.190      ;
+; -0.672 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 0.000        ; 2.780      ; 2.329      ;
+; -0.646 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 0.000        ; 2.780      ; 2.355      ;
+; -0.637 ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 0.000        ; 2.780      ; 2.364      ;
+; -0.596 ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; REGA_Mode[0] ; 0.000        ; 2.780      ; 2.405      ;
+; 0.564  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 0.000        ; 1.145      ; 1.930      ;
+; 0.574  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 0.000        ; 1.145      ; 1.940      ;
+; 0.820  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 0.000        ; 1.145      ; 2.186      ;
+; 0.823  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 0.000        ; 1.145      ; 2.189      ;
+; 0.824  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 0.000        ; 1.145      ; 2.190      ;
+; 0.963  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 0.000        ; 1.145      ; 2.329      ;
+; 0.989  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 0.000        ; 1.145      ; 2.355      ;
+; 0.998  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 0.000        ; 1.145      ; 2.364      ;
+; 1.039  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; REGA_Mode[0] ; 0.000        ; 1.145      ; 2.405      ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+--------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_25|Q'                                                                                                                                                                       ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                                   ; Launch Clock                      ; Latch Clock                       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; -2.756 ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[1] ; clk                               ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 6.102      ; 3.567      ;
+; -2.752 ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[0] ; clk                               ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 6.102      ; 3.571      ;
+; -2.749 ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[2] ; clk                               ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 6.102      ; 3.574      ;
+; 0.502  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 1.207      ; 1.930      ;
+; 0.512  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 1.207      ; 1.940      ;
+; 0.758  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 1.207      ; 2.186      ;
+; 0.761  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 1.207      ; 2.189      ;
+; 0.762  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 1.207      ; 2.190      ;
+; 0.901  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 1.207      ; 2.329      ;
+; 0.927  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 1.207      ; 2.355      ;
+; 0.936  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 1.207      ; 2.364      ;
+; 0.977  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 1.207      ; 2.405      ;
+; 1.660  ; DivisorClock:div_clk|fft:div_26|Q         ; DivisorClock:div_clk|fft:div_26|Q         ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 0.000      ; 1.881      ;
+; 1.709  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 0.000      ; 1.930      ;
+; 1.719  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 0.000      ; 1.940      ;
+; 1.965  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 0.000      ; 2.186      ;
+; 1.968  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 0.000      ; 2.189      ;
+; 1.969  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 0.000      ; 2.190      ;
+; 2.108  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 0.000      ; 2.329      ;
+; 2.134  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 0.000      ; 2.355      ;
+; 2.143  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 0.000      ; 2.364      ;
+; 2.184  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; 0.000      ; 2.405      ;
+; 3.344  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; -1.635     ; 1.930      ;
+; 3.354  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; -1.635     ; 1.940      ;
+; 3.600  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; -1.635     ; 2.186      ;
+; 3.603  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; -1.635     ; 2.189      ;
+; 3.604  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; -1.635     ; 2.190      ;
+; 3.743  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; -1.635     ; 2.329      ;
+; 3.769  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; -1.635     ; 2.355      ;
+; 3.778  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; -1.635     ; 2.364      ;
+; 3.819  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_25|Q ; 0.000        ; -1.635     ; 2.405      ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                      ;
++--------+-------------------------------------------+----------------------------------+-----------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                          ; Launch Clock                      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+----------------------------------+-----------------------------------+-------------+--------------+------------+------------+
+; -1.807 ; DivisorClock:div_clk|fft:div_2|Q          ; DivisorClock:div_clk|fft:div_2|Q ; DivisorClock:div_clk|fft:div_2|Q  ; clk         ; 0.000        ; 3.348      ; 2.138      ;
+; -1.307 ; DivisorClock:div_clk|fft:div_2|Q          ; DivisorClock:div_clk|fft:div_2|Q ; DivisorClock:div_clk|fft:div_2|Q  ; clk         ; -0.500       ; 3.348      ; 2.138      ;
+; 2.026  ; REGA_Mode[0]                              ; FERTILIZING:fertilizing|state    ; REGA_Mode[0]                      ; clk         ; 0.000        ; 3.348      ; 5.595      ;
+; 2.526  ; REGA_Mode[0]                              ; FERTILIZING:fertilizing|state    ; REGA_Mode[0]                      ; clk         ; -0.500       ; 3.348      ; 5.595      ;
+; 2.597  ; FERTILIZING:fertilizing|state             ; FILL:controle_encher|state       ; clk                               ; clk         ; 0.000        ; 0.000      ; 2.818      ;
+; 3.378  ; FILL:controle_encher|state                ; FILL:controle_encher|state       ; clk                               ; clk         ; 0.000        ; 0.000      ; 3.599      ;
+; 3.948  ; FERTILIZING:fertilizing|state             ; FERTILIZING:fertilizing|state    ; clk                               ; clk         ; 0.000        ; 0.000      ; 4.169      ;
+; 4.701  ; FILL:controle_encher|state                ; FERTILIZING:fertilizing|state    ; clk                               ; clk         ; 0.000        ; 0.000      ; 4.922      ;
+; 8.403  ; ContadorNivelAgua:contador_nivel|nivel[0] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 0.000        ; -4.895     ; 3.729      ;
+; 8.617  ; ContadorNivelAgua:contador_nivel|nivel[0] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 0.000        ; -4.895     ; 3.943      ;
+; 8.760  ; ContadorNivelAgua:contador_nivel|nivel[1] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 0.000        ; -4.895     ; 4.086      ;
+; 8.974  ; ContadorNivelAgua:contador_nivel|nivel[1] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 0.000        ; -4.895     ; 4.300      ;
+; 9.114  ; ContadorNivelAgua:contador_nivel|nivel[2] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 0.000        ; -4.895     ; 4.440      ;
+; 9.328  ; ContadorNivelAgua:contador_nivel|nivel[2] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_24|Q ; clk         ; 0.000        ; -4.895     ; 4.654      ;
+; 9.610  ; ContadorNivelAgua:contador_nivel|nivel[0] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 0.000        ; -6.102     ; 3.729      ;
+; 9.824  ; ContadorNivelAgua:contador_nivel|nivel[0] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 0.000        ; -6.102     ; 3.943      ;
+; 9.967  ; ContadorNivelAgua:contador_nivel|nivel[1] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 0.000        ; -6.102     ; 4.086      ;
+; 10.181 ; ContadorNivelAgua:contador_nivel|nivel[1] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 0.000        ; -6.102     ; 4.300      ;
+; 10.321 ; ContadorNivelAgua:contador_nivel|nivel[2] ; FILL:controle_encher|state       ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 0.000        ; -6.102     ; 4.440      ;
+; 10.535 ; ContadorNivelAgua:contador_nivel|nivel[2] ; FERTILIZING:fertilizing|state    ; DivisorClock:div_clk|fft:div_25|Q ; clk         ; 0.000        ; -6.102     ; 4.654      ;
+; 11.245 ; ContadorNivelAgua:contador_nivel|nivel[0] ; FILL:controle_encher|state       ; REGA_Mode[0]                      ; clk         ; 0.000        ; -7.737     ; 3.729      ;
+; 11.459 ; ContadorNivelAgua:contador_nivel|nivel[0] ; FERTILIZING:fertilizing|state    ; REGA_Mode[0]                      ; clk         ; 0.000        ; -7.737     ; 3.943      ;
+; 11.602 ; ContadorNivelAgua:contador_nivel|nivel[1] ; FILL:controle_encher|state       ; REGA_Mode[0]                      ; clk         ; 0.000        ; -7.737     ; 4.086      ;
+; 11.816 ; ContadorNivelAgua:contador_nivel|nivel[1] ; FERTILIZING:fertilizing|state    ; REGA_Mode[0]                      ; clk         ; 0.000        ; -7.737     ; 4.300      ;
+; 11.956 ; ContadorNivelAgua:contador_nivel|nivel[2] ; FILL:controle_encher|state       ; REGA_Mode[0]                      ; clk         ; 0.000        ; -7.737     ; 4.440      ;
+; 12.170 ; ContadorNivelAgua:contador_nivel|nivel[2] ; FERTILIZING:fertilizing|state    ; REGA_Mode[0]                      ; clk         ; 0.000        ; -7.737     ; 4.654      ;
++--------+-------------------------------------------+----------------------------------+-----------------------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_24|Q'                                                                                                                                                                       ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                                   ; Launch Clock                      ; Latch Clock                       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; -1.549 ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[1] ; clk                               ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 4.895      ; 3.567      ;
+; -1.545 ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[0] ; clk                               ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 4.895      ; 3.571      ;
+; -1.542 ; FILL:controle_encher|state                ; ContadorNivelAgua:contador_nivel|nivel[2] ; clk                               ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 4.895      ; 3.574      ;
+; -1.320 ; DivisorClock:div_clk|fft:div_25|Q         ; DivisorClock:div_clk|fft:div_25|Q         ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 2.886      ; 2.163      ;
+; -0.820 ; DivisorClock:div_clk|fft:div_25|Q         ; DivisorClock:div_clk|fft:div_25|Q         ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; -0.500       ; 2.886      ; 2.163      ;
+; 1.709  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 0.000      ; 1.930      ;
+; 1.719  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 0.000      ; 1.940      ;
+; 1.965  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 0.000      ; 2.186      ;
+; 1.968  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 0.000      ; 2.189      ;
+; 1.969  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 0.000      ; 2.190      ;
+; 2.108  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 0.000      ; 2.329      ;
+; 2.134  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 0.000      ; 2.355      ;
+; 2.143  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 0.000      ; 2.364      ;
+; 2.184  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; 0.000      ; 2.405      ;
+; 2.916  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -1.207     ; 1.930      ;
+; 2.926  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -1.207     ; 1.940      ;
+; 3.172  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -1.207     ; 2.186      ;
+; 3.175  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -1.207     ; 2.189      ;
+; 3.176  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -1.207     ; 2.190      ;
+; 3.315  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -1.207     ; 2.329      ;
+; 3.341  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -1.207     ; 2.355      ;
+; 3.350  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -1.207     ; 2.364      ;
+; 3.391  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; DivisorClock:div_clk|fft:div_25|Q ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -1.207     ; 2.405      ;
+; 4.551  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -2.842     ; 1.930      ;
+; 4.561  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -2.842     ; 1.940      ;
+; 4.807  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -2.842     ; 2.186      ;
+; 4.810  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -2.842     ; 2.189      ;
+; 4.811  ; ContadorNivelAgua:contador_nivel|nivel[0] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -2.842     ; 2.190      ;
+; 4.950  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -2.842     ; 2.329      ;
+; 4.976  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[2] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -2.842     ; 2.355      ;
+; 4.985  ; ContadorNivelAgua:contador_nivel|nivel[2] ; ContadorNivelAgua:contador_nivel|nivel[1] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -2.842     ; 2.364      ;
+; 5.026  ; ContadorNivelAgua:contador_nivel|nivel[1] ; ContadorNivelAgua:contador_nivel|nivel[0] ; REGA_Mode[0]                      ; DivisorClock:div_clk|fft:div_24|Q ; 0.000        ; -2.842     ; 2.405      ;
++--------+-------------------------------------------+-------------------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_524288|Q'                                                                                                                                                                      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+---------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock                           ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+---------------------------------------+--------------+------------+------------+
+; -1.321 ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_524288|Q ; 0.000        ; 2.862      ; 2.138      ;
+; -0.821 ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_524288|Q ; -0.500       ; 2.862      ; 2.138      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+---------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_32|Q'                                                                                                                                                       ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock                      ; Latch Clock                       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; -1.243 ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_32|Q ; 0.000        ; 2.784      ; 2.138      ;
+; -0.743 ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_64|Q ; DivisorClock:div_clk|fft:div_32|Q ; -0.500       ; 2.784      ; 2.138      ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_16|Q'                                                                                                                                                       ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock                      ; Latch Clock                       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+; -1.226 ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_16|Q ; 0.000        ; 2.758      ; 2.129      ;
+; -0.726 ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_32|Q ; DivisorClock:div_clk|fft:div_16|Q ; -0.500       ; 2.758      ; 2.129      ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_8192|Q'                                                                                                                                                                ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock                         ; Latch Clock                         ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------+--------------+------------+------------+
+; -1.162 ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_8192|Q ; 0.000        ; 2.701      ; 2.136      ;
+; -0.662 ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_16384|Q ; DivisorClock:div_clk|fft:div_8192|Q ; -0.500       ; 2.701      ; 2.136      ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+-------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_512|Q'                                                                                                                                                             ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                           ; To Node                             ; Launch Clock                        ; Latch Clock                        ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+------------------------------------+--------------+------------+------------+
+; -0.921 ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_512|Q ; 0.000        ; 2.202      ; 1.878      ;
+; -0.421 ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_1024|Q ; DivisorClock:div_clk|fft:div_512|Q ; -0.500       ; 2.202      ; 1.878      ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_2097152|Q'                                                                                                                                                                      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; -0.896 ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; 0.000        ; 2.160      ; 1.861      ;
+; -0.396 ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; -0.500       ; 2.160      ; 1.861      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_32768|Q'                                                                                                                                                                ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock                         ; Latch Clock                          ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; -0.882 ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_32768|Q ; 0.000        ; 2.164      ; 1.879      ;
+; -0.382 ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_65536|Q ; DivisorClock:div_clk|fft:div_32768|Q ; -0.500       ; 2.164      ; 1.879      ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_128|Q'                                                                                                                                                          ;
++--------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                            ; Launch Clock                       ; Latch Clock                        ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; -0.879 ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_128|Q ; 0.000        ; 2.160      ; 1.878      ;
+; -0.379 ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_256|Q ; DivisorClock:div_clk|fft:div_128|Q ; -0.500       ; 2.160      ; 1.878      ;
++--------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_2048|Q'                                                                                                                                                             ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                           ; To Node                             ; Launch Clock                        ; Latch Clock                         ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; -0.879 ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_2048|Q ; 0.000        ; 2.160      ; 1.878      ;
+; -0.379 ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_4096|Q ; DivisorClock:div_clk|fft:div_2048|Q ; -0.500       ; 2.160      ; 1.878      ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_4|Q'                                                                                                                                                    ;
++--------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                          ; Launch Clock                     ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; -0.879 ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_4|Q ; 0.000        ; 2.160      ; 1.878      ;
+; -0.379 ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_8|Q ; DivisorClock:div_clk|fft:div_4|Q ; -0.500       ; 2.160      ; 1.878      ;
++--------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_131072|Q'                                                                                                                                                                   ;
++--------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                               ; Launch Clock                          ; Latch Clock                           ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+; -0.863 ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_131072|Q ; 0.000        ; 2.144      ; 1.878      ;
+; -0.363 ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_262144|Q ; DivisorClock:div_clk|fft:div_131072|Q ; -0.500       ; 2.144      ; 1.878      ;
++--------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_4194304|Q'                                                                                                                                                                      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; -0.621 ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; 0.000        ; 2.160      ; 2.136      ;
+; -0.121 ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; -0.500       ; 2.160      ; 2.136      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_8388608|Q'                                                                                                                                                       ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock                      ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------------+--------------+------------+------------+
+; -0.524 ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; 0.000        ; 1.787      ; 1.860      ;
+; -0.024 ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_24|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; -0.500       ; 1.787      ; 1.860      ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_16384|Q'                                                                                                                                                                ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock                         ; Latch Clock                          ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; -0.523 ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_16384|Q ; 0.000        ; 1.787      ; 1.861      ;
+; -0.023 ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_32768|Q ; DivisorClock:div_clk|fft:div_16384|Q ; -0.500       ; 1.787      ; 1.861      ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_1024|Q'                                                                                                                                                             ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                           ; To Node                             ; Launch Clock                        ; Latch Clock                         ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; -0.521 ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_1024|Q ; 0.000        ; 1.785      ; 1.861      ;
+; -0.021 ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_2048|Q ; DivisorClock:div_clk|fft:div_1024|Q ; -0.500       ; 1.785      ; 1.861      ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_256|Q'                                                                                                                                                          ;
++--------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                            ; Launch Clock                       ; Latch Clock                        ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+; -0.521 ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_256|Q ; 0.000        ; 1.785      ; 1.861      ;
+; -0.021 ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_512|Q ; DivisorClock:div_clk|fft:div_256|Q ; -0.500       ; 1.785      ; 1.861      ;
++--------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_65536|Q'                                                                                                                                                                   ;
++--------+---------------------------------------+---------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                               ; Launch Clock                          ; Latch Clock                          ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+---------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+; -0.521 ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_65536|Q ; 0.000        ; 1.784      ; 1.860      ;
+; -0.021 ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_131072|Q ; DivisorClock:div_clk|fft:div_65536|Q ; -0.500       ; 1.784      ; 1.860      ;
++--------+---------------------------------------+---------------------------------------+---------------------------------------+--------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_8|Q'                                                                                                                                                       ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock                      ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------+--------------+------------+------------+
+; -0.521 ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_8|Q ; 0.000        ; 1.785      ; 1.861      ;
+; -0.021 ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_16|Q ; DivisorClock:div_clk|fft:div_8|Q ; -0.500       ; 1.785      ; 1.861      ;
++--------+-----------------------------------+-----------------------------------+-----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_1048576|Q'                                                                                                                                                                      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; -0.520 ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; 0.000        ; 1.784      ; 1.861      ;
+; -0.020 ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; -0.500       ; 1.784      ; 1.861      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_2|Q'                                                                                                                                                    ;
++--------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                          ; Launch Clock                     ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; -0.520 ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_2|Q ; 0.000        ; 1.784      ; 1.861      ;
+; -0.020 ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_4|Q ; DivisorClock:div_clk|fft:div_2|Q ; -0.500       ; 1.784      ; 1.861      ;
++--------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_64|Q'                                                                                                                                                          ;
++--------+------------------------------------+------------------------------------+------------------------------------+-----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                            ; Launch Clock                       ; Latch Clock                       ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+------------------------------------+------------------------------------+-----------------------------------+--------------+------------+------------+
+; -0.520 ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_64|Q ; 0.000        ; 1.784      ; 1.861      ;
+; -0.020 ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_128|Q ; DivisorClock:div_clk|fft:div_64|Q ; -0.500       ; 1.784      ; 1.861      ;
++--------+------------------------------------+------------------------------------+------------------------------------+-----------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_4096|Q'                                                                                                                                                             ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                           ; To Node                             ; Launch Clock                        ; Latch Clock                         ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; -0.263 ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_4096|Q ; 0.000        ; 1.785      ; 2.119      ;
+; 0.237  ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_8192|Q ; DivisorClock:div_clk|fft:div_4096|Q ; -0.500       ; 1.785      ; 2.119      ;
++--------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DivisorClock:div_clk|fft:div_262144|Q'                                                                                                                                                                   ;
++--------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                               ; Launch Clock                          ; Latch Clock                           ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+; -0.262 ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_262144|Q ; 0.000        ; 1.785      ; 2.120      ;
+; 0.238  ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_524288|Q ; DivisorClock:div_clk|fft:div_262144|Q ; -0.500       ; 1.785      ; 2.120      ;
++--------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                             ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; From Clock                             ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; clk                                    ; clk                                    ; 7        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_2|Q       ; clk                                    ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_24|Q      ; clk                                    ; 27       ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_25|Q      ; clk                                    ; 27       ; 0        ; 0        ; 0        ;
+; REGA_Mode[0]                           ; clk                                    ; 28       ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_4|Q       ; DivisorClock:div_clk|fft:div_2|Q       ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_8|Q       ; DivisorClock:div_clk|fft:div_4|Q       ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_16|Q      ; DivisorClock:div_clk|fft:div_8|Q       ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_32|Q      ; DivisorClock:div_clk|fft:div_16|Q      ; 1        ; 1        ; 0        ; 0        ;
+; clk                                    ; DivisorClock:div_clk|fft:div_24|Q      ; 3        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_24|Q      ; DivisorClock:div_clk|fft:div_24|Q      ; 9        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_25|Q      ; DivisorClock:div_clk|fft:div_24|Q      ; 10       ; 1        ; 0        ; 0        ;
+; REGA_Mode[0]                           ; DivisorClock:div_clk|fft:div_24|Q      ; 9        ; 0        ; 0        ; 0        ;
+; clk                                    ; DivisorClock:div_clk|fft:div_25|Q      ; 3        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_24|Q      ; DivisorClock:div_clk|fft:div_25|Q      ; 9        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_25|Q      ; DivisorClock:div_clk|fft:div_25|Q      ; 10       ; 0        ; 0        ; 0        ;
+; REGA_Mode[0]                           ; DivisorClock:div_clk|fft:div_25|Q      ; 9        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_64|Q      ; DivisorClock:div_clk|fft:div_32|Q      ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_128|Q     ; DivisorClock:div_clk|fft:div_64|Q      ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_256|Q     ; DivisorClock:div_clk|fft:div_128|Q     ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_512|Q     ; DivisorClock:div_clk|fft:div_256|Q     ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_1024|Q    ; DivisorClock:div_clk|fft:div_512|Q     ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_2048|Q    ; DivisorClock:div_clk|fft:div_1024|Q    ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_4096|Q    ; DivisorClock:div_clk|fft:div_2048|Q    ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_8192|Q    ; DivisorClock:div_clk|fft:div_4096|Q    ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_16384|Q   ; DivisorClock:div_clk|fft:div_8192|Q    ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_32768|Q   ; DivisorClock:div_clk|fft:div_16384|Q   ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_65536|Q   ; DivisorClock:div_clk|fft:div_32768|Q   ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_131072|Q  ; DivisorClock:div_clk|fft:div_65536|Q   ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_262144|Q  ; DivisorClock:div_clk|fft:div_131072|Q  ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_524288|Q  ; DivisorClock:div_clk|fft:div_262144|Q  ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_524288|Q  ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_24|Q      ; DivisorClock:div_clk|fft:div_8388608|Q ; 1        ; 1        ; 0        ; 0        ;
+; clk                                    ; REGA_Mode[0]                           ; 3        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_24|Q      ; REGA_Mode[0]                           ; 9        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_25|Q      ; REGA_Mode[0]                           ; 9        ; 0        ; 0        ; 0        ;
+; REGA_Mode[0]                           ; REGA_Mode[0]                           ; 9        ; 0        ; 0        ; 0        ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                              ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; From Clock                             ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; clk                                    ; clk                                    ; 7        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_2|Q       ; clk                                    ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_24|Q      ; clk                                    ; 27       ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_25|Q      ; clk                                    ; 27       ; 0        ; 0        ; 0        ;
+; REGA_Mode[0]                           ; clk                                    ; 28       ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_4|Q       ; DivisorClock:div_clk|fft:div_2|Q       ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_8|Q       ; DivisorClock:div_clk|fft:div_4|Q       ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_16|Q      ; DivisorClock:div_clk|fft:div_8|Q       ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_32|Q      ; DivisorClock:div_clk|fft:div_16|Q      ; 1        ; 1        ; 0        ; 0        ;
+; clk                                    ; DivisorClock:div_clk|fft:div_24|Q      ; 3        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_24|Q      ; DivisorClock:div_clk|fft:div_24|Q      ; 9        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_25|Q      ; DivisorClock:div_clk|fft:div_24|Q      ; 10       ; 1        ; 0        ; 0        ;
+; REGA_Mode[0]                           ; DivisorClock:div_clk|fft:div_24|Q      ; 9        ; 0        ; 0        ; 0        ;
+; clk                                    ; DivisorClock:div_clk|fft:div_25|Q      ; 3        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_24|Q      ; DivisorClock:div_clk|fft:div_25|Q      ; 9        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_25|Q      ; DivisorClock:div_clk|fft:div_25|Q      ; 10       ; 0        ; 0        ; 0        ;
+; REGA_Mode[0]                           ; DivisorClock:div_clk|fft:div_25|Q      ; 9        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_64|Q      ; DivisorClock:div_clk|fft:div_32|Q      ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_128|Q     ; DivisorClock:div_clk|fft:div_64|Q      ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_256|Q     ; DivisorClock:div_clk|fft:div_128|Q     ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_512|Q     ; DivisorClock:div_clk|fft:div_256|Q     ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_1024|Q    ; DivisorClock:div_clk|fft:div_512|Q     ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_2048|Q    ; DivisorClock:div_clk|fft:div_1024|Q    ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_4096|Q    ; DivisorClock:div_clk|fft:div_2048|Q    ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_8192|Q    ; DivisorClock:div_clk|fft:div_4096|Q    ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_16384|Q   ; DivisorClock:div_clk|fft:div_8192|Q    ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_32768|Q   ; DivisorClock:div_clk|fft:div_16384|Q   ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_65536|Q   ; DivisorClock:div_clk|fft:div_32768|Q   ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_131072|Q  ; DivisorClock:div_clk|fft:div_65536|Q   ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_262144|Q  ; DivisorClock:div_clk|fft:div_131072|Q  ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_524288|Q  ; DivisorClock:div_clk|fft:div_262144|Q  ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_524288|Q  ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; 1        ; 1        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_24|Q      ; DivisorClock:div_clk|fft:div_8388608|Q ; 1        ; 1        ; 0        ; 0        ;
+; clk                                    ; REGA_Mode[0]                           ; 3        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_24|Q      ; REGA_Mode[0]                           ; 9        ; 0        ; 0        ; 0        ;
+; DivisorClock:div_clk|fft:div_25|Q      ; REGA_Mode[0]                           ; 9        ; 0        ; 0        ; 0        ;
+; REGA_Mode[0]                           ; REGA_Mode[0]                           ; 9        ; 0        ; 0        ; 0        ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 29    ; 29   ;
+; Unconstrained Output Ports      ; 19    ; 19   ;
+; Unconstrained Output Port Paths ; 98    ; 98   ;
++---------------------------------+-------+------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                 ;
++----------------------------------------+----------------------------------------+------+-------------+
+; Target                                 ; Clock                                  ; Type ; Status      ;
++----------------------------------------+----------------------------------------+------+-------------+
+; DivisorClock:div_clk|fft:div_2|Q       ; DivisorClock:div_clk|fft:div_2|Q       ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_4|Q       ; DivisorClock:div_clk|fft:div_4|Q       ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_8|Q       ; DivisorClock:div_clk|fft:div_8|Q       ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_16|Q      ; DivisorClock:div_clk|fft:div_16|Q      ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_24|Q      ; DivisorClock:div_clk|fft:div_24|Q      ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_25|Q      ; DivisorClock:div_clk|fft:div_25|Q      ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_32|Q      ; DivisorClock:div_clk|fft:div_32|Q      ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_64|Q      ; DivisorClock:div_clk|fft:div_64|Q      ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_128|Q     ; DivisorClock:div_clk|fft:div_128|Q     ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_256|Q     ; DivisorClock:div_clk|fft:div_256|Q     ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_512|Q     ; DivisorClock:div_clk|fft:div_512|Q     ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_1024|Q    ; DivisorClock:div_clk|fft:div_1024|Q    ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_2048|Q    ; DivisorClock:div_clk|fft:div_2048|Q    ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_4096|Q    ; DivisorClock:div_clk|fft:div_4096|Q    ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_8192|Q    ; DivisorClock:div_clk|fft:div_8192|Q    ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_16384|Q   ; DivisorClock:div_clk|fft:div_16384|Q   ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_32768|Q   ; DivisorClock:div_clk|fft:div_32768|Q   ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_65536|Q   ; DivisorClock:div_clk|fft:div_65536|Q   ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_131072|Q  ; DivisorClock:div_clk|fft:div_131072|Q  ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_262144|Q  ; DivisorClock:div_clk|fft:div_262144|Q  ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_524288|Q  ; DivisorClock:div_clk|fft:div_524288|Q  ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_1048576|Q ; DivisorClock:div_clk|fft:div_1048576|Q ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_2097152|Q ; DivisorClock:div_clk|fft:div_2097152|Q ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_4194304|Q ; DivisorClock:div_clk|fft:div_4194304|Q ; Base ; Constrained ;
+; DivisorClock:div_clk|fft:div_8388608|Q ; DivisorClock:div_clk|fft:div_8388608|Q ; Base ; Constrained ;
+; REGA_Mode[0]                           ; REGA_Mode[0]                           ; Base ; Constrained ;
+; clk                                    ; clk                                    ; Base ; Constrained ;
++----------------------------------------+----------------------------------------+------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                           ;
++--------------+--------------------------------------------------------------------------------------+
+; Input Port   ; Comment                                                                              ;
++--------------+--------------------------------------------------------------------------------------+
+; B_Adb        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; REGA_Mode[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; REGA_Mode[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------+--------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; Output Port      ; Comment                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; Aspersao         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ERRO             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Gotejamento      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Mist_Adb         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[0]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[1]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[2]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[3]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[4]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[5]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[6]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Ve               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+---------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                           ;
++--------------+--------------------------------------------------------------------------------------+
+; Input Port   ; Comment                                                                              ;
++--------------+--------------------------------------------------------------------------------------+
+; B_Adb        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; REGA_Mode[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; REGA_Mode[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------+--------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; Output Port      ; Comment                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; Aspersao         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ERRO             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Gotejamento      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Mist_Adb         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[0]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[1]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[2]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[3]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[4]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[5]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segs[6]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Ve               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; linhas_Matriz[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Wed Jul 24 14:46:05 2024
+Info: Command: quartus_sta RegaAutomatica -c RegaAutomatica
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'RegaAutomatica.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name REGA_Mode[0] REGA_Mode[0]
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_25|Q DivisorClock:div_clk|fft:div_25|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_24|Q DivisorClock:div_clk|fft:div_24|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_8388608|Q DivisorClock:div_clk|fft:div_8388608|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_4194304|Q DivisorClock:div_clk|fft:div_4194304|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_2097152|Q DivisorClock:div_clk|fft:div_2097152|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_1048576|Q DivisorClock:div_clk|fft:div_1048576|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_524288|Q DivisorClock:div_clk|fft:div_524288|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_262144|Q DivisorClock:div_clk|fft:div_262144|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_131072|Q DivisorClock:div_clk|fft:div_131072|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_65536|Q DivisorClock:div_clk|fft:div_65536|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_32768|Q DivisorClock:div_clk|fft:div_32768|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_16384|Q DivisorClock:div_clk|fft:div_16384|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_8192|Q DivisorClock:div_clk|fft:div_8192|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_4096|Q DivisorClock:div_clk|fft:div_4096|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_2048|Q DivisorClock:div_clk|fft:div_2048|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_1024|Q DivisorClock:div_clk|fft:div_1024|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_512|Q DivisorClock:div_clk|fft:div_512|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_256|Q DivisorClock:div_clk|fft:div_256|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_128|Q DivisorClock:div_clk|fft:div_128|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_64|Q DivisorClock:div_clk|fft:div_64|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_32|Q DivisorClock:div_clk|fft:div_32|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_16|Q DivisorClock:div_clk|fft:div_16|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_8|Q DivisorClock:div_clk|fft:div_8|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_4|Q DivisorClock:div_clk|fft:div_4|Q
+    Info (332105): create_clock -period 1.000 -name DivisorClock:div_clk|fft:div_2|Q DivisorClock:div_clk|fft:div_2|Q
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -14.612
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -14.612             -28.776 clk 
+    Info (332119):    -5.725             -17.084 DivisorClock:div_clk|fft:div_24|Q 
+    Info (332119):    -4.518             -14.677 DivisorClock:div_clk|fft:div_25|Q 
+    Info (332119):    -2.883              -8.558 REGA_Mode[0] 
+    Info (332119):     0.208               0.000 DivisorClock:div_clk|fft:div_262144|Q 
+    Info (332119):     0.209               0.000 DivisorClock:div_clk|fft:div_4096|Q 
+    Info (332119):     0.466               0.000 DivisorClock:div_clk|fft:div_1048576|Q 
+    Info (332119):     0.466               0.000 DivisorClock:div_clk|fft:div_2|Q 
+    Info (332119):     0.466               0.000 DivisorClock:div_clk|fft:div_64|Q 
+    Info (332119):     0.467               0.000 DivisorClock:div_clk|fft:div_1024|Q 
+    Info (332119):     0.467               0.000 DivisorClock:div_clk|fft:div_256|Q 
+    Info (332119):     0.467               0.000 DivisorClock:div_clk|fft:div_65536|Q 
+    Info (332119):     0.467               0.000 DivisorClock:div_clk|fft:div_8|Q 
+    Info (332119):     0.469               0.000 DivisorClock:div_clk|fft:div_16384|Q 
+    Info (332119):     0.470               0.000 DivisorClock:div_clk|fft:div_8388608|Q 
+    Info (332119):     0.567               0.000 DivisorClock:div_clk|fft:div_4194304|Q 
+    Info (332119):     0.809               0.000 DivisorClock:div_clk|fft:div_131072|Q 
+    Info (332119):     0.825               0.000 DivisorClock:div_clk|fft:div_128|Q 
+    Info (332119):     0.825               0.000 DivisorClock:div_clk|fft:div_2048|Q 
+    Info (332119):     0.825               0.000 DivisorClock:div_clk|fft:div_4|Q 
+    Info (332119):     0.828               0.000 DivisorClock:div_clk|fft:div_32768|Q 
+    Info (332119):     0.842               0.000 DivisorClock:div_clk|fft:div_2097152|Q 
+    Info (332119):     0.867               0.000 DivisorClock:div_clk|fft:div_512|Q 
+    Info (332119):     1.108               0.000 DivisorClock:div_clk|fft:div_8192|Q 
+    Info (332119):     1.172               0.000 DivisorClock:div_clk|fft:div_16|Q 
+    Info (332119):     1.189               0.000 DivisorClock:div_clk|fft:div_32|Q 
+    Info (332119):     1.267               0.000 DivisorClock:div_clk|fft:div_524288|Q 
+Info (332146): Worst-case hold slack is -5.536
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.536             -16.597 REGA_Mode[0] 
+    Info (332119):    -2.756              -8.257 DivisorClock:div_clk|fft:div_25|Q 
+    Info (332119):    -1.807              -1.807 clk 
+    Info (332119):    -1.549              -5.956 DivisorClock:div_clk|fft:div_24|Q 
+    Info (332119):    -1.321              -1.321 DivisorClock:div_clk|fft:div_524288|Q 
+    Info (332119):    -1.243              -1.243 DivisorClock:div_clk|fft:div_32|Q 
+    Info (332119):    -1.226              -1.226 DivisorClock:div_clk|fft:div_16|Q 
+    Info (332119):    -1.162              -1.162 DivisorClock:div_clk|fft:div_8192|Q 
+    Info (332119):    -0.921              -0.921 DivisorClock:div_clk|fft:div_512|Q 
+    Info (332119):    -0.896              -0.896 DivisorClock:div_clk|fft:div_2097152|Q 
+    Info (332119):    -0.882              -0.882 DivisorClock:div_clk|fft:div_32768|Q 
+    Info (332119):    -0.879              -0.879 DivisorClock:div_clk|fft:div_128|Q 
+    Info (332119):    -0.879              -0.879 DivisorClock:div_clk|fft:div_2048|Q 
+    Info (332119):    -0.879              -0.879 DivisorClock:div_clk|fft:div_4|Q 
+    Info (332119):    -0.863              -0.863 DivisorClock:div_clk|fft:div_131072|Q 
+    Info (332119):    -0.621              -0.621 DivisorClock:div_clk|fft:div_4194304|Q 
+    Info (332119):    -0.524              -0.524 DivisorClock:div_clk|fft:div_8388608|Q 
+    Info (332119):    -0.523              -0.523 DivisorClock:div_clk|fft:div_16384|Q 
+    Info (332119):    -0.521              -0.521 DivisorClock:div_clk|fft:div_1024|Q 
+    Info (332119):    -0.521              -0.521 DivisorClock:div_clk|fft:div_256|Q 
+    Info (332119):    -0.521              -0.521 DivisorClock:div_clk|fft:div_65536|Q 
+    Info (332119):    -0.521              -0.521 DivisorClock:div_clk|fft:div_8|Q 
+    Info (332119):    -0.520              -0.520 DivisorClock:div_clk|fft:div_1048576|Q 
+    Info (332119):    -0.520              -0.520 DivisorClock:div_clk|fft:div_2|Q 
+    Info (332119):    -0.520              -0.520 DivisorClock:div_clk|fft:div_64|Q 
+    Info (332119):    -0.263              -0.263 DivisorClock:div_clk|fft:div_4096|Q 
+    Info (332119):    -0.262              -0.262 DivisorClock:div_clk|fft:div_262144|Q 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289             -13.851 REGA_Mode[0] 
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_1024|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_1048576|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_128|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_131072|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_16384|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_16|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_2048|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_2097152|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_24|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_256|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_25|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_262144|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_2|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_32768|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_32|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_4096|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_4194304|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_4|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_512|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_524288|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_64|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_65536|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_8192|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_8388608|Q 
+    Info (332119):     0.234               0.000 DivisorClock:div_clk|fft:div_8|Q 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 365 megabytes
+    Info: Processing ended: Wed Jul 24 14:46:18 2024
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:01
+
+
